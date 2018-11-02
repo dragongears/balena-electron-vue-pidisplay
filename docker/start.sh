@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Default to UTC if no TIMEZONE env variable is set
+echo "Setting time zone to ${TIMEZONE=UTC}"
+# This only works on Debian-based images
+echo "${TIMEZONE}" > /etc/timezone
+dpkg-reconfigure tzdata
+
 # using local electron module instead of the global electron lets you
 # easily control specific version dependency between your app and electron itself.
 # the syntax below starts an X istance with ONLY our electronJS fired up,
