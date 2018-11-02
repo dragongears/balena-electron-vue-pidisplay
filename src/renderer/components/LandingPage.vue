@@ -27,7 +27,7 @@
 </script>
 
 <style>
-  /*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
   * {
     box-sizing: border-box;
@@ -45,7 +45,7 @@
         rgba(229, 229, 229, .9) 100%
       );
     height: 100vh;
-    padding: 60px 80px;
+    padding: 20px 20px;
     width: 100vw;
   }
 
