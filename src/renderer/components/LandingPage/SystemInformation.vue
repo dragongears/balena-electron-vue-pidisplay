@@ -49,7 +49,7 @@
 
   .item .value {
     color: #35495e;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: bold;
   }
 </style>

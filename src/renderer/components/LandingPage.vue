@@ -45,7 +45,7 @@
         rgba(229, 229, 229, .9) 100%
       );
     height: 100vh;
-    padding: 20px 20px;
+    padding: 36px 36px;
     width: 100vw;
   }
 
