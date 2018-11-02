@@ -2,10 +2,10 @@
   <div>
     <div class="items">
       <div class="item">
-        <div class="value">{{ dateStr }}</div>
+        <div class="value">{{ timeStr }}</div>
       </div>
       <div class="item">
-        <div class="value">{{ timeStr }}</div>
+        <div class="small-value">{{ dateStr }}</div>
       </div>
     </div>
   </div>
@@ -49,7 +49,12 @@
 
   .item .value {
     color: #35495e;
-    font-size: 42px;
+    font-size: 64px;
+    font-weight: bold;
+  }
+  .item .small-value {
+    color: #35495e;
+    font-size: 28px;
     font-weight: bold;
   }
 </style>
