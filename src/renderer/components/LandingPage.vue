@@ -3,15 +3,15 @@
     <main>
       <div class="left-side">
         <system-information></system-information>
-        <weather
-            :update-interval="300"
-            api-key="1a3804ecac0cc9e49f0f47e5ea7cdf61"
-            title="Weather"
-            latitude="26.194221"
-            longitude="-80.1447177"
-            language="en"
-            units="us">
-        </weather>
+        <!--<weather-->
+            <!--:update-interval="300"-->
+            <!--api-key="1a3804ecac0cc9e49f0f47e5ea7cdf61"-->
+            <!--title="Weather"-->
+            <!--latitude="26.194221"-->
+            <!--longitude="-80.1447177"-->
+            <!--language="en"-->
+            <!--units="us">-->
+        <!--</weather>-->
       </div>
 
       <div class="right-side">
@@ -22,15 +22,14 @@
 </template>
 
 <script>
-  import VueWeatherWidget from 'vue-weather-widget'
-  import 'vue-weather-widget/dist/css/vue-weather-widget.css'
+  // import VueWeatherWidget from 'vue-weather-widget'
   import SystemInformation from './LandingPage/SystemInformation'
 
   export default {
     name: 'landing-page',
     components: {
-      SystemInformation,
-      'weather': VueWeatherWidget
+      // 'weather': VueWeatherWidget,
+      SystemInformation
     },
     methods: {
       open (link) {
@@ -67,20 +66,6 @@
     height: auto;
     width: 260px;
     margin-left: 30px;
-  }
-
-  .fe_alert {
-    display: none !important
-  }
-
-  .fe_container {
-    width: 480px;
-    font-weight: 300;
-    min-width: auto !important;
-    max-width: initial !important;
-    color: #333;
-    margin: 20px auto;
-    height: auto !important;
   }
 
   main {
