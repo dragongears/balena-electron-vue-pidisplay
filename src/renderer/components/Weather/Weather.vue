@@ -1,11 +1,8 @@
 <template>
   <div class="weather">
-    <div style="font-size:38px;">
+    <div v-if="!weather.currently">
       {{message}}
     </div>
-    <!--<div v-if="!weather.currently">-->
-      <!--{{message}}-->
-    <!--</div>-->
     <div class="current-weather" v-if="weather.currently">
       <div>
         {{weather.currently.summary}}
@@ -58,8 +55,7 @@
       return {
         weather: {},
         ready: true,
-        // message: 'Waiting for weather data',
-        message: process.env.NODE_ENV,
+        message: 'Waiting for weather data',
         dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
       }
     },
@@ -70,7 +66,7 @@
         if (this.ready) {
           this.ready = false
           this.$http
-            .get(`https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
+            .get(`${process.env.NODE_ENV === 'development' ? 'https://cors-anywhere.herokuapp.com/' : ''}https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
             .then((response) => {
               this.ready = true
               this.weather = response.data
