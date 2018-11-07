@@ -1,8 +1,11 @@
 <template>
   <div class="weather">
-    <div v-if="!weather.currently">
+    <div style="font-size:38px;">
       {{message}}
     </div>
+    <!--<div v-if="!weather.currently">-->
+      <!--{{message}}-->
+    <!--</div>-->
     <div class="current-weather" v-if="weather.currently">
       <div>
         {{weather.currently.summary}}
@@ -55,7 +58,8 @@
       return {
         weather: {},
         ready: true,
-        message: 'Waiting for weather data',
+        // message: 'Waiting for weather data',
+        message: process.env.NODE_ENV,
         dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
       }
     },
@@ -72,7 +76,7 @@
               this.weather = response.data
             })
             .catch((e) => {
-              this.message = e.message
+              // this.message = e.message
             })
         }
       },
