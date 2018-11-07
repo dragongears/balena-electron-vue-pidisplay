@@ -1,7 +1,7 @@
 <template>
   <div class="weather">
     <div v-if="!weather.currently">
-      Waiting for weather data
+      {{message}}
     </div>
     <div class="current-weather" v-if="weather.currently">
       <div>
@@ -55,6 +55,7 @@
       return {
         weather: {},
         ready: true,
+        message: 'Waiting for weather data',
         dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
       }
     },
@@ -68,10 +69,11 @@
             .get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
             .then((response) => {
               this.ready = true
-              console.log(response.data.timezone)
               this.weather = response.data
             })
-          console.log('Weather update')
+            .catch((e) => {
+              this.message = e.message
+            })
         }
       },
       intervalFunc () {
