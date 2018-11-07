@@ -1,5 +1,8 @@
 <template>
   <div class="weather">
+    <div v-if="!weather.currently">
+      Waiting for weather data
+    </div>
     <div class="current-weather" v-if="weather.currently">
       <div>
         {{weather.currently.summary}}
