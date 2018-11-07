@@ -66,7 +66,7 @@
         if (this.ready) {
           this.ready = false
           this.$http
-            .get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
+            .get(`https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
             .then((response) => {
               this.ready = true
               this.weather = response.data
