@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="items">
-      <div class="item">
-        <div class="value">{{ timeStr }}</div>
-      </div>
-      <div class="item">
-        <div class="small-value">{{ dateStr }}</div>
-      </div>
+  <div class="items">
+    <div class="item">
+      <div class="value">{{ timeStr }}</div>
+    </div>
+    <div class="item">
+      <div class="small-value">{{ dateStr }}</div>
     </div>
   </div>
 </template>
@@ -40,7 +38,7 @@
 </script>
 
 <style scoped>
-  .items { margin-top: 8px; }
+  .items {}
 
   .item {
     display: flex;

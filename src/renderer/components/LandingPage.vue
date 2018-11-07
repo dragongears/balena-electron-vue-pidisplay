@@ -1,35 +1,30 @@
 <template>
-  <div id="wrapper">
-    <main>
-      <div class="left-side">
-        <system-information></system-information>
-        <!--<weather-->
-            <!--:update-interval="300"-->
-            <!--api-key="1a3804ecac0cc9e49f0f47e5ea7cdf61"-->
-            <!--title="Weather"-->
-            <!--latitude="26.194221"-->
-            <!--longitude="-80.1447177"-->
-            <!--language="en"-->
-            <!--units="us">-->
-        <!--</weather>-->
-      </div>
-
-      <div class="right-side">
-        <img id="cooper" src="~@/assets/cooper.jpg" alt="cooper">
-      </div>
-    </main>
-  </div>
+  <main>
+    <div class="left-side">
+      <date-and-time class="dat"></date-and-time>
+      <weather
+          :update-interval="300"
+          api-key="1a3804ecac0cc9e49f0f47e5ea7cdf61"
+          latitude="26.194221"
+          longitude="-80.1447177"
+      >
+      </weather>
+    </div>
+    <div class="right-side">
+      <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
+    </div>
+  </main>
 </template>
 
 <script>
-  // import VueWeatherWidget from 'vue-weather-widget'
-  import SystemInformation from './LandingPage/SystemInformation'
+  import DateAndTime from './DateAndTime'
+  import Weather from './Weather/Weather'
 
   export default {
     name: 'landing-page',
     components: {
-      // 'weather': VueWeatherWidget,
-      SystemInformation
+      Weather,
+      DateAndTime
     },
     methods: {
       open (link) {
@@ -50,37 +45,38 @@
 
   body { font-family: 'Source Sans Pro', sans-serif; }
 
-  #wrapper {
-    background:
-      radial-gradient(
-        ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(229, 229, 229, .9) 100%
-      );
-    height: 100vh;
-    padding: 16px 16px;
-    width: 100vw;
+  .dat {
+    margin-top: 2px;
   }
 
-  #cooper {
+  .cooper {
     height: auto;
-    width: 260px;
-    margin-left: 30px;
+    width: 440px;
   }
 
   main {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
   }
 
   .left-side {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    margin-left:16px;
+    margin-right:8px;
   }
 
   .right-side {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-left:8px;
+    margin-right:16px;
   }
 </style>
