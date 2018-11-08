@@ -6,14 +6,14 @@
           {{weather.currently.summary}}
         </div>
         <div>
-          <skycon :condition=weather.currently.icon width="40" height="40" color="#35495e"></skycon>
+          <skycon :condition=weather.currently.icon width="40" height="40" :color="iconColor"></skycon>
           <span class="current-temp">{{Math.floor(weather.currently.temperature)}}°</span>
         </div>
       </div>
       <div class="forecast">
         <div class="forecast-day" v-for="(day, index) in weather.daily.data" v-if="index > 0">
           <div>{{ dow[(Math.floor(day.time / 86400) + 4) % 7] }}</div>
-          <div><skycon :condition=day.icon width="20" height="20" color="#35495e"></skycon></div>
+          <div><skycon :condition=day.icon width="20" height="20" :color="iconColor"></skycon></div>
           <div>{{Math.floor(day.temperatureHigh)}}</div>
           <div>{{Math.floor(day.temperatureLow)}}</div>
         </div>
@@ -58,10 +58,9 @@
         weather: null,
         ready: true,
         message: 'Waiting for weather data',
-        dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+        dow: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+        iconColor: '#35495e'
       }
-    },
-    computed: {
     },
     methods: {
       getWeather () {
@@ -74,7 +73,7 @@
               this.weather = response.data
             })
             .catch((e) => {
-              // this.message = e.message
+              this.message = e.message
             })
         }
       },
@@ -93,10 +92,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import "../../assets/css/_variables.scss";
+
   .weather {
     margin-top:14px;
-    color: #35495e;
+    color: $primary-text-color;
     font-weight: bold;
   }
 

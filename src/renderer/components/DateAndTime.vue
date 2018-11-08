@@ -37,7 +37,9 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import "../assets/css/_variables.scss";
+
   .items {}
 
   .item {
@@ -46,12 +48,12 @@
   }
 
   .item .value {
-    color: #35495e;
+    color: $primary-text-color;
     font-size: 64px;
     font-weight: bold;
   }
   .item .small-value {
-    color: #35495e;
+    color: $primary-text-color;
     font-size: 28px;
     font-weight: bold;
   }
