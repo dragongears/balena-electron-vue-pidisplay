@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="left-side">
+    <section class="left-side">
       <date-and-time class="dat"></date-and-time>
       <weather
           :update-interval="300"
@@ -9,10 +9,10 @@
           longitude="-80.1447177"
       >
       </weather>
-    </div>
-    <div class="right-side">
+    </section>
+    <section class="right-side">
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
-    </div>
+    </section>
   </main>
 </template>
 
@@ -34,7 +34,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
   * {
@@ -43,40 +43,38 @@
     padding: 0;
   }
 
-  body { font-family: 'Source Sans Pro', sans-serif; }
-
-  .dat {
-    margin-top: 2px;
-  }
-
-  .cooper {
-    height: auto;
-    width: 440px;
-  }
-
   main {
+    font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     height: 100vh;
     width: 100vw;
-  }
 
-  .left-side {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left:16px;
-    margin-right:8px;
-  }
+    > section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
 
-  .right-side {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left:8px;
-    margin-right:16px;
+    > .left-side {
+      margin-left:16px;
+      margin-right:8px;
+
+      .dat {
+        margin-top: 2px;
+      }
+    }
+
+    > .right-side {
+      margin-left:8px;
+      margin-right:16px;
+
+      .cooper {
+        height: auto;
+        width: 440px;
+      }
+    }
   }
 </style>

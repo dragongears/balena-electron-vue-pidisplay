@@ -99,33 +99,31 @@
     margin-top:14px;
     color: $primary-text-color;
     font-weight: bold;
-  }
 
-  .current-weather {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 28px;
-  }
+    .current-weather {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 28px;
 
-  .current-temp {
-    font-size: 2em;
-  }
+      .current-temp {
+        font-size: 2em;
+      }
+    }
 
-  .forecast {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    .forecast {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
 
-  }
-
-  .forecast-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .weather-summary {
-    margin-top: 8px;
+      .forecast-day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .weather-summary {
+      margin-top: 8px;
+    }
   }
 </style>

@@ -1,12 +1,8 @@
 <template>
-  <div class="items">
-    <div class="item">
-      <div class="value">{{ timeStr }}</div>
-    </div>
-    <div class="item">
-      <div class="small-value">{{ dateStr }}</div>
-    </div>
-  </div>
+  <section class="items">
+    <div class="time">{{ timeStr }}</div>
+    <div class="date">{{ dateStr }}</div>
+  </section>
 </template>
 
 <script>
@@ -40,21 +36,20 @@
 <style lang="scss">
   @import "../assets/css/_variables.scss";
 
-  .items {}
-
-  .item {
+  .items {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 6px;
-  }
+    color: $primary-text-color;
+    font-weight: bold;
 
-  .item .value {
-    color: $primary-text-color;
-    font-size: 64px;
-    font-weight: bold;
-  }
-  .item .small-value {
-    color: $primary-text-color;
-    font-size: 28px;
-    font-weight: bold;
+    .time {
+      font-size: 64px;
+    }
+
+    .date {
+      font-size: 28px;
+    }
   }
 </style>
