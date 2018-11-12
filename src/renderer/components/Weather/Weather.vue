@@ -10,7 +10,7 @@
           <span class="current-temp">{{Math.floor(weather.currently.temperature)}}°</span>
         </div>
       </div>
-      <div class="forecast">
+      <div class="forecast-daily">
         <div class="forecast-day" v-for="(day, index) in weather.daily.data" v-if="index > 0">
           <div>{{ dow[(Math.floor(day.time / 86400) + 4) % 7] }}</div>
           <div><skycon :condition=day.icon width="20" height="20" :color="iconColor"></skycon></div>
@@ -111,7 +111,7 @@
       }
     }
 
-    .forecast {
+    .forecast-daily {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
