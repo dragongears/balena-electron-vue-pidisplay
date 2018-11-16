@@ -77,6 +77,7 @@
       margin-right:16px;
 
       .cooper {
+        margin-top:20px;
         height: auto;
         width: 440px;
       }

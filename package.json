@@ -1,6 +1,6 @@
 {
-  "name": "resin-electron-vue-pidisplay",
-  "productName": "resin-electron-vue-pidisplay",
+  "name": "balena-electron-vue-pidisplay",
+  "productName": "balena-electron-vue-pidisplay",
   "version": "0.1.0",
   "author": "Art Dahm",
   "description": "An electron-vue project",

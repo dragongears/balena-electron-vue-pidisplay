@@ -8,7 +8,7 @@
   import LandingPage from './components/LandingPage'
 
   export default {
-    name: 'resin-electron-vue',
+    name: 'balena-electron-vue-pidisplay',
     components: {
       LandingPage
     }

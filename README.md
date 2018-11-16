@@ -2,6 +2,9 @@
 
 > A Raspberry Pi time and weather display project
 
+Create a .env file in the root directory of your project. Add an environment variable containing your DarkSky API key on a new line in the form of DARKSKY=YOUR_API_KEY_HERE
+
+For a Balena (formerly Resin.io) device, create a DARKSKY device variable in the dashboard.
 #### Build Setup
 
 ``` bash
