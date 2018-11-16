@@ -1,6 +1,8 @@
 <template>
   <main>
     <section class="left-side">
+      <div>{{env}}</div>
+      <div>>>{{test}}</div>
       <date-and-time class="dat"></date-and-time>
       <weather
           :update-interval="300"
@@ -25,6 +27,12 @@
     components: {
       Weather,
       DateAndTime
+    },
+    data () {
+      return {
+        env: process.env.NODE_ENV,
+        test: process.env.TIMEZONE
+      }
     },
     methods: {
       open (link) {
