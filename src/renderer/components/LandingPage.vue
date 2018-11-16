@@ -11,7 +11,6 @@
       </weather>
     </section>
     <section class="right-side">
-      <div>{{env}}</div>
       <div style="font-size: 32px;">>>{{test}}</div>
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
     </section>
@@ -30,8 +29,7 @@
     },
     data () {
       return {
-        env: process.env.NODE_ENV,
-        test: process.env.TIMEZONE
+        test: process.env.DARKSKY
       }
     },
     methods: {
