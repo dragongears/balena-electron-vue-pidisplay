@@ -4,7 +4,7 @@
       <date-and-time class="dat"></date-and-time>
       <weather
           :update-interval="300"
-          api-key="1a3804ecac0cc9e49f0f47e5ea7cdf61"
+          :api-key="darkSkyApiKey"
           latitude="26.194221"
           longitude="-80.1447177"
       >
@@ -29,7 +29,7 @@
     },
     data () {
       return {
-        test: process.env.DARKSKY
+        darkSkyApiKey: process.env.DARKSKY
       }
     },
     methods: {
