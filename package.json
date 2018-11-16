@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "dotenv": "^6.1.0",
     "electron": "^1.6.10",
     "electron-rebuild": "^1.5.11",
     "vue": "^2.3.3",

@@ -11,7 +11,6 @@
       </weather>
     </section>
     <section class="right-side">
-      <div style="font-size: 32px;">>>{{test}}</div>
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
     </section>
   </main>
