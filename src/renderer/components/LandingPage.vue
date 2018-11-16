@@ -1,8 +1,6 @@
 <template>
   <main>
     <section class="left-side">
-      <div>{{env}}</div>
-      <div>>>{{test}}</div>
       <date-and-time class="dat"></date-and-time>
       <weather
           :update-interval="300"
@@ -13,6 +11,8 @@
       </weather>
     </section>
     <section class="right-side">
+      <div>{{env}}</div>
+      <div>>>{{test}}</div>
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
     </section>
   </main>
