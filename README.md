@@ -1,9 +1,13 @@
-# resin-electron-vue-pidisplay
+# balena-electron-vue-pidisplay
 
 > A Raspberry Pi time and weather display project
 
+#### Storing a DarkSky API Key for Develoment and Production
+
+##### Development
 Create a .env file in the root directory of your project. Add an environment variable containing your DarkSky API key on a new line in the form of DARKSKY=YOUR_API_KEY_HERE
 
+##### Production
 For a Balena (formerly Resin.io) device, create a DARKSKY device variable in the dashboard.
 #### Build Setup
 
@@ -22,6 +26,49 @@ yarn run build
 yarn run lint
 
 ```
+
+---
+
+#### Feature Wishlist:
+
+- Replace static placeholder image with a slideshow or weather map
+
+- Serve up display remotely
+
+---
+
+#### Some Things Learned From Working On This Project:
+
+- Balena on the Raspberry Pi
+
+  https://www.balena.io/docs/learn/getting-started/raspberrypi3/nodejs/
+  
+- Rotating the Raspberry Pi display in a Balena application
+
+  In the device configuration tab of the Balena dashboard, create a RESIN_HOST_CONFIG_lcd_rotate custom environment variable and give it a value of 2 to rotate the Raspberry Pi display 180 degrees.
+  
+- CSS Flexbox
+
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+  
+- Working with the DarkSky API and using cors-anywhere to access the API in a development environment
+
+  https://darksky.net/dev
+
+  https://cors-anywhere.herokuapp.com/
+  
+- Skycons and the vue-skycon NPM module
+
+  https://darkskyapp.github.io/skycons/
+  
+  https://github.com/timleland/vue-skycon
+  
+
+---
+
+#### Unresolved Issues:
+
+- Occasional white screen
 
 ---
 
