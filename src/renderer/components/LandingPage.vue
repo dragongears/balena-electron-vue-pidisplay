@@ -2,13 +2,13 @@
   <main>
     <section class="left-side">
       <date-and-time class="dat"></date-and-time>
-      <!--<weather-->
-          <!--:update-interval="300"-->
-          <!--:api-key="darkSkyApiKey"-->
-          <!--latitude="26.194221"-->
-          <!--longitude="-80.1447177"-->
-      <!--&gt;-->
-      <!--</weather>-->
+      <weather
+          :update-interval="300"
+          :api-key="darkSkyApiKey"
+          latitude="26.194221"
+          longitude="-80.1447177"
+      >
+      </weather>
     </section>
     <section class="right-side">
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
