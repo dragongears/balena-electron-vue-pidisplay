@@ -30,9 +30,6 @@ export default {
       skycons: null
     }
   },
-  created () {
-    this.create()
-  },
   methods: {
     create () {
       // initialize skycons
@@ -62,10 +59,16 @@ export default {
       this.create(value)
     }
   },
-  mounted () {
-    this.setCondition(this.condition)
+  created () {
+    // this.create()
   },
-  destroyed () {
+  mounted () {
+    this.$nextTick(function () {
+      this.create()
+      this.setCondition(this.condition)
+    })
+  },
+  beforeDestroy () {
     this.destroy()
   }
 }

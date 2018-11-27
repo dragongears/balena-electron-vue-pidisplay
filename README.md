@@ -63,13 +63,6 @@ yarn run lint
   
   https://github.com/timleland/vue-skycon
   
-
----
-
-#### Unresolved Issues:
-
-- A memory leak resulting in a crash and white screen. Most likely cause by code related to the Skycons.
-
 ---
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[3a1e893](https://github.com/SimulatedGREG/electron-vue/tree/3a1e893e10e8dcfb4c5e5580810ed70f74b3a83e) using [vue-cli](https://github.com/vuejs/vue-cli).
