@@ -68,7 +68,7 @@ yarn run lint
 
 #### Unresolved Issues:
 
-- Occasional white screen
+- A memory leak resulting in a crash and white screen. Most likely cause by code related to the Skycons.
 
 ---
 

@@ -1,5 +1,5 @@
 <template>
-<canvas :id="id" :width="width" :height="height"></canvas>
+  <canvas :id="id" :width="width" :height="height"></canvas>
 </template>
 
 <script>
@@ -16,7 +16,8 @@ export default {
       default: 64
     },
     condition: {
-      type: String
+      type: String,
+      default: 'partly-cloudy'
     },
     color: {
       type: String,
@@ -45,23 +46,24 @@ export default {
       if (this.id && this.skycons) {
         this.skycons.remove(this.id)
       }
+    },
+    setCondition (value) {
+      value = value.toUpperCase().replace(/-/g, '_')
+      if (this.id && this.skycons) {
+        this.skycons.set(this.id, Skycons[value])
+      }
     }
   },
   watch: {
     condition (value) {
-      value = value.toUpperCase().replace(/-/g, '_')
-      if (this.skycons) {
-        this.skycons.set(this.id, Skycons[value])
-      }
+      this.setCondition(value)
     },
     options (value) {
       this.create(value)
     }
   },
   mounted () {
-    if (this.skycons) {
-      this.skycons.set(this.id, Skycons.PARTLY_CLOUDY_DAY)
-    }
+    this.setCondition(this.condition)
   },
   destroyed () {
     this.destroy()
