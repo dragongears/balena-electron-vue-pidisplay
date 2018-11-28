@@ -5,9 +5,15 @@
         <div>
           {{weather.currently.summary}}
         </div>
-        <div>
-          <skycon :condition=weather.currently.icon width="40" height="40" :color="iconColor"></skycon>
-          <span class="current-temp">{{Math.floor(weather.currently.temperature)}}°</span>
+        <div class="temps-today">
+          <div>
+            <skycon :condition=weather.currently.icon width="40" height="40" :color="iconColor"></skycon>
+            <span class="current-temp">{{Math.floor(weather.currently.temperature)}}°</span>
+          </div>
+          <div class="hi-lo-today">
+            <div>Hi {{Math.floor(weather.daily.data[0].temperatureHigh)}}°</div>
+            <div>Lo {{Math.floor(weather.daily.data[0].temperatureLow)}}°</div>
+          </div>
         </div>
       </div>
       <div class="forecast-daily">
@@ -106,12 +112,25 @@
       align-items: center;
       font-size: 28px;
 
-      .current-temp {
-        font-size: 2em;
+      .temps-today {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .current-temp {
+          font-size: 2em;
+        }
+
+        .hi-lo-today {
+          margin-left: 22px;
+          font-size: 0.75em;
+        }
       }
+
     }
 
     .forecast-daily {
+      margin-top: 8px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;

@@ -64,8 +64,8 @@
     }
 
     > .left-side {
-      margin-left:16px;
-      margin-right:8px;
+      margin-left: 16px;
+      width: 316px;
 
       .dat {
         margin-top: 2px;
@@ -73,11 +73,11 @@
     }
 
     > .right-side {
-      margin-left:8px;
-      margin-right:16px;
+      margin-left: 8px;
+      margin-right: 16px;
 
       .cooper {
-        margin-top:20px;
+        margin-top: 20px;
         height: auto;
         width: 440px;
       }
