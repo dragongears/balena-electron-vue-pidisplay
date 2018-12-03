@@ -1,9 +1,39 @@
 <template>
-  <canvas :id="id" :width="width" :height="height"></canvas>
+  <img :src=skycon alt="" :width=width :height=height>
 </template>
 
 <script>
-import Skycons from './skycons'
+import wiDaySunny from '@/assets/weather/wi-day-sunny.svg'
+import wiNightClear from '@/assets/weather/wi-night-clear.svg'
+import wiPartlyCloudyDay from '@/assets/weather/wi-day-cloudy.svg'
+import wiPartlyCloudyNight from '@/assets/weather/wi-night-cloudy.svg'
+import wiCloudy from '@/assets/weather/wi-cloudy.svg'
+import wiRain from '@/assets/weather/wi-rain.svg'
+import wiSnow from '@/assets/weather/wi-snow.svg'
+import wiSleet from '@/assets/weather/wi-sleet.svg'
+import wiWindy from '@/assets/weather/wi-windy.svg'
+import wiFog from '@/assets/weather/wi-fog.svg'
+import wiHail from '@/assets/weather/wi-hail.svg'
+import wiThunderstorm from '@/assets/weather/wi-thunderstorm.svg'
+import wiTornado from '@/assets/weather/wi-tornado.svg'
+import wiNA from '@/assets/weather/wi-na.svg'
+
+const conditions = {
+  'clear-day': wiDaySunny,
+  'clear-night': wiNightClear,
+  'partly-cloudy-day': wiPartlyCloudyDay,
+  'partly-cloudy-night': wiPartlyCloudyNight,
+  'cloudy': wiCloudy,
+  'rain': wiRain,
+  'snow': wiSnow,
+  'sleet': wiSleet,
+  'wind': wiWindy,
+  'fog': wiFog,
+  'hail': wiHail,
+  'thunderstorm': wiThunderstorm,
+  'tornado': wiTornado,
+  'na': wiNA
+}
 
 export default {
   props: {
@@ -17,47 +47,29 @@ export default {
     },
     condition: {
       type: String,
-      default: 'partly-cloudy'
-    },
-    color: {
-      type: String,
-      default: 'black'
+      default: wiDaySunny
     }
   },
   data: function () {
     return {
-      id: 'canvas' + Date.now().valueOf() + Math.floor(10000 * Math.random()),
-      skycons: null
+      skycon: null
     }
   },
   methods: {
     create () {
-      // initialize skycons
-      this.destroy()
-      this.skycons = new Skycons({
-        color: this.color
-      })
-      this.skycons.play()
     },
     destroy () {
-      if (this.id && this.skycons) {
-        this.skycons.remove(this.id)
-        this.skycons = null
-      }
     },
     setCondition (value) {
-      value = value.toUpperCase().replace(/-/g, '_')
-      if (this.id && this.skycons) {
-        this.skycons.set(this.id, Skycons[value])
+      this.skycon = conditions[value]
+      if (this.skycon === undefined) {
+        this.skycon = wiNA
       }
     }
   },
   watch: {
     condition (value) {
       this.setCondition(value)
-    },
-    options (value) {
-      this.create(value)
     }
   },
   created () {
