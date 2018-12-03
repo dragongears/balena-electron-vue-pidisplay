@@ -42,6 +42,7 @@ export default {
     destroy () {
       if (this.id && this.skycons) {
         this.skycons.remove(this.id)
+        this.skycons = null
       }
     },
     setCondition (value) {
