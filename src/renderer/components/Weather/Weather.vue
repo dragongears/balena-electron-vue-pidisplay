@@ -7,7 +7,7 @@
         </div>
         <div class="temps-today">
           <div>
-            <skycon :condition=weather.currently.icon width="40" height="40" :color="iconColor"></skycon>
+            <weather-icon :condition=weather.currently.icon width="40" height="40" :color="iconColor"></weather-icon>
             <span class="current-temp">{{Math.floor(weather.currently.temperature)}}°</span>
           </div>
           <div class="hi-lo-today">
@@ -19,7 +19,7 @@
       <div class="forecast-daily">
         <div class="forecast-day" v-for="(day, index) in weather.daily.data" v-if="index > 0">
           <div>{{ dow[(Math.floor(day.time / 86400) + 4) % 7] }}</div>
-          <div><skycon :condition=day.icon width="20" height="20" :color="iconColor"></skycon></div>
+          <div><weather-icon :condition=day.icon width="20" height="20" :color="iconColor"></weather-icon></div>
           <div>{{Math.floor(day.temperatureHigh)}}</div>
           <div>{{Math.floor(day.temperatureLow)}}</div>
         </div>
@@ -35,16 +35,16 @@
 </template>
 
 <script>
-  import VueSkycons from './Skycon'
+  import WeatherIcon from './WeatherIcon'
 
   export default {
     components: {
-      skycon: VueSkycons
+      weatherIcon: WeatherIcon
     },
     props: {
       updateInterval: {
         type: Number,
-        default: 3
+        default: 3600
       },
       apiKey: {
         type: String,
@@ -77,6 +77,7 @@
             .then((response) => {
               this.ready = true
               this.weather = response.data
+              this.$emit('updated', Date.now())
             })
             .catch((e) => {
               this.message = e.message

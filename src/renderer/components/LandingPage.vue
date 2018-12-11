@@ -3,12 +3,18 @@
     <section class="left-side">
       <date-and-time class="dat"></date-and-time>
       <weather
-          :update-interval="300"
+          :update-interval="3600"
           :api-key="darkSkyApiKey"
           latitude="26.194221"
           longitude="-80.1447177"
+          @updated="showUpdateDateTime"
       >
       </weather>
+      <div class="last-updated">
+        <div v-if="lastUpdated">
+          Last updated: {{lastUpdated}}
+        </div>
+      </div>
     </section>
     <section class="right-side">
       <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
@@ -28,12 +34,16 @@
     },
     data () {
       return {
-        darkSkyApiKey: process.env.DARKSKY
+        darkSkyApiKey: process.env.DARKSKY,
+        lastUpdated: null
       }
     },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      showUpdateDateTime (now) {
+        this.lastUpdated = new Date(now).toString()
       }
     }
   }
@@ -41,6 +51,7 @@
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  @import "../assets/css/_variables.scss";
 
   * {
     box-sizing: border-box;
@@ -69,6 +80,15 @@
 
       .dat {
         margin-top: 2px;
+      }
+
+      .last-updated {
+        flex-grow: 1;
+        margin-bottom: 3px;
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: .75em;
+        color: $primary-text-color;
       }
     }
 

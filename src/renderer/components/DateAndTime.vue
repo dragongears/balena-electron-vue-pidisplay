@@ -14,10 +14,10 @@
     },
     computed: {
       dateStr: function () {
-        return this.date.toDateString()
+        return this.date.toDateString('en-US', {weekday: 'long'})
       },
       timeStr: function () {
-        return this.date.toLocaleTimeString()
+        return this.date.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'})
       }
     },
     methods: {
