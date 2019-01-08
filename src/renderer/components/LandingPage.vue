@@ -108,7 +108,9 @@
 
       .cooper {
         margin-top: 20px;
+        max-width: 440px;
         height: auto;
+        max-height: 440px;
       }
     }
   }
