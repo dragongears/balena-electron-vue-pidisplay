@@ -17,7 +17,14 @@
       </div>
     </section>
     <section class="right-side">
-      <img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">
+      <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
+        <template slot="feeds" slot-scope="props">
+          <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
+        </template>
+        <template slot="error" slot-scope="props">
+          <div> {{ props.error.error_message }} </div>
+        </template>
+      </vue-instagram>
     </section>
   </main>
 </template>
@@ -25,15 +32,18 @@
 <script>
   import DateAndTime from './DateAndTime'
   import Weather from './Weather/Weather'
+  import VueInstagram from 'vue-instagram'
 
   export default {
     name: 'landing-page',
     components: {
       Weather,
-      DateAndTime
+      DateAndTime,
+      VueInstagram
     },
     data () {
       return {
+        instagramToken: process.env.INSTAGRAM,
         darkSkyApiKey: process.env.DARKSKY,
         lastUpdated: null
       }
@@ -43,6 +53,7 @@
         this.$electron.shell.openExternal(link)
       },
       showUpdateDateTime (now) {
+        this.$refs.igimage.getUserFeed()
         this.lastUpdated = new Date(now).toString()
       }
     }
@@ -98,8 +109,9 @@
 
       .cooper {
         margin-top: 20px;
+        max-width: 440px;
         height: auto;
-        width: 440px;
+        max-height: 440px;
       }
     }
   }
