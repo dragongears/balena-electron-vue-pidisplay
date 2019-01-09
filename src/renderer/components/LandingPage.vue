@@ -22,7 +22,7 @@
           <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
         </template>
         <template slot="error" slot-scope="props">
-          <div class="fancy-alert"> {{ props.error.error_message }} </div>
+          <div> {{ props.error.error_message }} </div>
         </template>
       </vue-instagram>
     </section>
