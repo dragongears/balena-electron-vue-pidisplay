@@ -17,7 +17,7 @@
       </div>
     </section>
     <section class="right-side">
-      <vue-instagram token="3139793132.d90570a.532364f33af340ff9c75bab293d9d063" :count="1" mediaType="image" ref="igimage">
+      <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
         <template slot="feeds" slot-scope="props">
           <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
         </template>
@@ -43,6 +43,7 @@
     },
     data () {
       return {
+        instagramToken: process.env.INSTAGRAM,
         darkSkyApiKey: process.env.DARKSKY,
         lastUpdated: null
       }
