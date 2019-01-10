@@ -19,12 +19,13 @@
     <section class="right-side">
       <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
         <template slot="feeds" slot-scope="props">
+          <!--<img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">-->
           <div>{{props}}</div>
-          <img class="cooper" :src=test>
+          <!--<img class="cooper" :src=props.feed.images.standard_resolution.url>-->
         </template>
-        <template slot="error" slot-scope="props">
-          <div> {{ props.error.error_message }} </div>
-        </template>
+        <!--<template slot="error" slot-scope="props">-->
+          <!--<div> {{ props.error.error_message }} </div>-->
+        <!--</template>-->
       </vue-instagram>
     </section>
   </main>
@@ -47,7 +48,7 @@
         instagramToken: process.env.INSTAGRAM,
         darkSkyApiKey: process.env.DARKSKY,
         lastUpdated: null,
-        test: './imgs/cooper.jpg'
+        test: '~@/assets/cooper.jpg'
       }
     },
     methods: {
@@ -55,7 +56,7 @@
         this.$electron.shell.openExternal(link)
       },
       showUpdateDateTime (now) {
-        this.$refs.igimage.getUserFeed()
+        // this.$refs.igimage.getUserFeed()
         this.lastUpdated = new Date(now).toString()
       }
     }
