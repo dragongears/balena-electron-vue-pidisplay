@@ -1,5 +1,6 @@
 <template>
   <section class="items">
+    <slot name="test" :teststr="timeStr"></slot>
     <div class="time">{{ timeStr }}</div>
     <div class="date">{{ dateStr }}</div>
   </section>

@@ -1,7 +1,11 @@
 <template>
   <main>
     <section class="left-side">
-      <date-and-time class="dat"></date-and-time>
+      <date-and-time class="dat">
+        <template slot="test" slot-scope="{teststr}">
+          {{`Test: ${teststr}`}}
+        </template>
+      </date-and-time>
       <weather
           :update-interval="3600"
           :api-key="darkSkyApiKey"
@@ -18,7 +22,7 @@
     </section>
     <section class="right-side">
       <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
-        <template slot="feeds" slot-scope="feed">
+        <template slot="feeds" slot-scope="{feed}">
           <!--<img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">-->
           <div>{{feed}}</div>
           <!--<img class="cooper" :src=props.feed.images.standard_resolution.url>-->
