@@ -3,7 +3,9 @@
     <section class="left-side">
       <date-and-time class="dat">
         <template slot="test" slot-scope="{teststr}">
-          {{`Test: ${teststr}`}}
+          <div style="font-size:32px; color: #c00;">
+            {{`Test: ${teststr}`}}
+          </div>
         </template>
       </date-and-time>
       <weather
