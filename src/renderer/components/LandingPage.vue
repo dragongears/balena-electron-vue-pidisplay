@@ -19,7 +19,8 @@
     <section class="right-side">
       <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
         <template slot="feeds" slot-scope="props">
-          <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
+          <div>Test</div>
+          <!--<img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">-->
         </template>
         <!--<template slot="error" slot-scope="props">-->
           <!--<div> {{ props.error.error_message }} </div>-->
