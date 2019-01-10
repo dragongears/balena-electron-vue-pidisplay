@@ -18,9 +18,9 @@
     </section>
     <section class="right-side">
       <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
-        <template slot="feeds" slot-scope="props">
+        <template slot="feeds" slot-scope="propsx">
           <!--<img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">-->
-          <div>{{props}}</div>
+          <div>{{propsx}}</div>
           <!--<img class="cooper" :src=props.feed.images.standard_resolution.url>-->
         </template>
         <!--<template slot="error" slot-scope="props">-->
