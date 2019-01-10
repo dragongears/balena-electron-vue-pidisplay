@@ -32,12 +32,12 @@
 <script>
   import DateAndTime from './DateAndTime'
   import Weather from './Weather/Weather'
-  // import VueInstagram from 'vue-instagram'
+  import VueInstagram from 'vue-instagram'
 
   export default {
     name: 'landing-page',
     components: {
-      // VueInstagram,
+      VueInstagram,
       Weather,
       DateAndTime
     },
