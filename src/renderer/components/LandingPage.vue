@@ -2,11 +2,6 @@
   <main>
     <section class="left-side">
       <date-and-time class="dat">
-        <template slot="test" slot-scope="{teststr}">
-          <div style="font-size:32px; color: #c00;">
-            {{`Test: ${teststr}`}}
-          </div>
-        </template>
       </date-and-time>
       <weather
           :update-interval="3600"
@@ -23,15 +18,17 @@
       </div>
     </section>
     <section class="right-side">
+      <!--<div>Right side {{instagramToken}}</div>-->
+      <!--<img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">-->
       <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
         <template slot="feeds" slot-scope="{feed}">
-          <!--<img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">-->
-          <div>{{feed}}</div>
+          <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
+          <!--<div>Feed: {{feed}}</div>-->
           <!--<img class="cooper" :src=props.feed.images.standard_resolution.url>-->
         </template>
-        <!--<template slot="error" slot-scope="props">-->
-          <!--<div> {{ props.error.error_message }} </div>-->
-        <!--</template>-->
+        <template slot="error" slot-scope="props">
+          <div> {{ props.error.error_message }} </div>
+        </template>
       </vue-instagram>
     </section>
   </main>
@@ -62,7 +59,7 @@
         this.$electron.shell.openExternal(link)
       },
       showUpdateDateTime (now) {
-        // this.$refs.igimage.getUserFeed()
+        this.$refs.igimage.getUserFeed()
         this.lastUpdated = new Date(now).toString()
       }
     }
