@@ -1,7 +1,8 @@
 <template>
   <main>
     <section class="left-side">
-      <date-and-time class="dat"></date-and-time>
+      <date-and-time class="dat">
+      </date-and-time>
       <weather
           :update-interval="3600"
           :api-key="darkSkyApiKey"
@@ -17,9 +18,9 @@
       </div>
     </section>
     <section class="right-side">
-      <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
+      <vue-instagram :token="instagramToken" :count="1" ref="igimage">
         <template slot="feeds" slot-scope="props">
-          <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
+          <img class="cooper" :src=props.feed.images.standard_resolution.url>
         </template>
         <template slot="error" slot-scope="props">
           <div> {{ props.error.error_message }} </div>
@@ -37,15 +38,16 @@
   export default {
     name: 'landing-page',
     components: {
+      VueInstagram,
       Weather,
-      DateAndTime,
-      VueInstagram
+      DateAndTime
     },
     data () {
       return {
         instagramToken: process.env.INSTAGRAM,
         darkSkyApiKey: process.env.DARKSKY,
-        lastUpdated: null
+        lastUpdated: null,
+        test: '~@/assets/cooper.jpg'
       }
     },
     methods: {

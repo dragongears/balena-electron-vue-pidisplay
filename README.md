@@ -3,13 +3,16 @@
 > A Raspberry Pi time and weather display project based off of [resin-electron-vue](https://github.com/imomaliev/resin-electron-vue)
 
 
-#### Storing a DarkSky API Key for Develoment and Production
+#### Storing a DarkSky API Key and Instagram Token for Development and Production
 
 ##### Development
-Create a .env file in the root directory of your project. Add an environment variable containing your DarkSky API key on a new line in the form of DARKSKY=YOUR_API_KEY_HERE
+Create a .env file in the root directory of your project.
+Add an environment variable containing your DarkSky API key on a new line in the form of DARKSKY=YOUR_API_KEY_HERE
+Add an environment variable containing your Instagram token on a new line in the form of INSTAGRAM=YOUR_TOKEN_HERE
 
 ##### Production
-For a Balena (formerly Resin.io) device, create a DARKSKY device variable in the dashboard.
+For a Balena (formerly Resin.io) device, create a DARKSKY device variable and an INSTAGRAM device variable in the dashboard.
+
 #### Build Setup
 
 ``` bash
@@ -31,8 +34,6 @@ yarn run lint
 ---
 
 #### Feature Wishlist:
-
-- Replace static placeholder image with a slideshow or weather map
 
 - Serve up display remotely
 

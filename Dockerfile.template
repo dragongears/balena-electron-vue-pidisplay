@@ -55,7 +55,7 @@ RUN rm -rf src/ static/ .electron-vue/ eslintrc.js
 
 # Install yarn modules for the application
 RUN yarn install --unsafe-perm --production --prefer-offline \
-	&& yarn cache clean && node_modules/.bin/electron-rebuild
+	&& yarn cache clean && node_modules/.bin/electron-rebuild --arch=armv7l
 
 COPY ./docker/start.sh ./start.sh
 
