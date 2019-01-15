@@ -30,7 +30,7 @@
     "dotenv": "^6.1.0",
     "electron": "~1.6.16",
     "electron-rebuild": "^1.8.2",
-    "vue": "^2.3.3",
+    "vue": "^2.5.22",
     "vue-electron": "^1.0.6",
     "vue-instagram": "^2.0.1"
   },
