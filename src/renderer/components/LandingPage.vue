@@ -18,13 +18,9 @@
       </div>
     </section>
     <section class="right-side">
-      <!--<div>Right side {{instagramToken}}</div>-->
-      <!--<img class="cooper" src="~@/assets/cooper.jpg" alt="cooper">-->
-      <vue-instagram :token="instagramToken" :count="1" mediaType="image" ref="igimage">
-        <template slot="feeds" slot-scope="{feed}">
-          <img class="cooper" :src="`${props.feed.images.standard_resolution.url}`">
-          <!--<div>Feed: {{feed}}</div>-->
-          <!--<img class="cooper" :src=props.feed.images.standard_resolution.url>-->
+      <vue-instagram :token="instagramToken" :count="1" ref="igimage">
+        <template slot="feeds" slot-scope="props">
+          <img class="cooper" :src=props.feed.images.standard_resolution.url>
         </template>
         <template slot="error" slot-scope="props">
           <div> {{ props.error.error_message }} </div>
