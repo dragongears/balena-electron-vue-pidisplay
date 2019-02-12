@@ -1,7 +1,7 @@
 # balena-electron-vue-pidisplay
 
-> A Raspberry Pi time and weather display project based off of [resin-electron-vue](https://github.com/imomaliev/resin-electron-vue)
-
+> A Raspberry Pi project to display the time and weather next to the most recent image in an Instagram feed.
+> Based off of [resin-electron-vue](https://github.com/imomaliev/resin-electron-vue)
 
 #### Storing a DarkSky API Key and Instagram Token for Development and Production
 
@@ -35,7 +35,7 @@ yarn run lint
 
 #### Feature Wishlist:
 
-- Serve up display remotely
+- Serve up display in a web page remotely
 
 ---
 

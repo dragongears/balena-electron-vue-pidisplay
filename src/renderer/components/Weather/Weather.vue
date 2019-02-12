@@ -90,6 +90,7 @@
           setTimeout(this.intervalFunc, this.updateInterval * 1000)
         }
       }
+
     },
     created () {
     },
