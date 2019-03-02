@@ -76,10 +76,17 @@
             .get(`${process.env.NODE_ENV === 'development' ? 'https://cors-anywhere.herokuapp.com/' : ''}https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
             .then((response) => {
               this.ready = true
-              this.weather = response.data
+              if (response.status === 200) {
+                this.weather = response.data
+              } else {
+                this.weather = null
+                this.message = `${response.status}: ${response.statusText}`
+                console.dir(response)
+              }
               this.$emit('updated', Date.now())
             })
             .catch((e) => {
+              this.weather = null
               this.message = e.message
             })
         }
