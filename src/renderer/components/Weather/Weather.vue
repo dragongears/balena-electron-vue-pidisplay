@@ -97,6 +97,7 @@
           setTimeout(this.intervalFunc, this.updateInterval * 1000)
         }
       }
+
     },
     created () {
     },
@@ -150,7 +151,7 @@
       }
     }
     .weather-summary {
-      margin-top: 8px;
+      margin-top: 12px;
     }
   }
 </style>
