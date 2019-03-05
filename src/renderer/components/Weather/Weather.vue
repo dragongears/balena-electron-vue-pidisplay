@@ -86,8 +86,9 @@
               this.$emit('updated', Date.now())
             })
             .catch((e) => {
+              this.ready = true
               this.weather = null
-              this.message = e.message
+              this.message = `${e.message} - ${new Date().toString()}`
             })
         }
       },
