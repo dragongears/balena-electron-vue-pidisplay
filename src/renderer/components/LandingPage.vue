@@ -54,9 +54,9 @@
       open (link) {
         this.$electron.shell.openExternal(link)
       },
-      showUpdateDateTime (now) {
+      showUpdateDateTime () {
         this.$refs.igimage.getUserFeed()
-        this.lastUpdated = new Date(now).toString()
+        this.lastUpdated = new Date().toString()
       }
     }
   }
