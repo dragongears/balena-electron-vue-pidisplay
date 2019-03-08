@@ -75,7 +75,7 @@
   main {
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     height: 100vh;
     width: 100vw;
