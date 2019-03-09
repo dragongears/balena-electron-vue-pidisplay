@@ -89,6 +89,7 @@
 
     > .left-side {
       margin-left: 16px;
+      margin-right: 8px;
       width: 312px;
 
       .dat {
