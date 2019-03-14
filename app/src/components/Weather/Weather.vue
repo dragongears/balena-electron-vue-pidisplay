@@ -17,11 +17,13 @@
         </div>
       </div>
       <div class="forecast-daily">
-        <div class="forecast-day" v-for="(day, index) in weather.daily.data" v-if="index > 0">
-          <div>{{ dow[(Math.floor(day.time / 86400) + 4) % 7] }}</div>
-          <div><weather-icon :condition=day.icon width="20" height="20" :color="iconColor"></weather-icon></div>
-          <div>{{Math.floor(day.temperatureHigh)}}</div>
-          <div>{{Math.floor(day.temperatureLow)}}</div>
+        <div class="forecast-day" v-for="(day, index) in weather.daily.data" :key="index">
+          <template v-if="index > 0">
+            <div>{{ dow[(Math.floor(day.time / 86400) + 4) % 7] }}</div>
+            <div><weather-icon :condition=day.icon width="20" height="20" :color="iconColor"></weather-icon></div>
+            <div>{{Math.floor(day.temperatureHigh)}}</div>
+            <div>{{Math.floor(day.temperatureLow)}}</div>
+          </template>
         </div>
       </div>
       <div class="weather-summary">
