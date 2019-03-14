@@ -73,7 +73,7 @@
         if (this.ready) {
           this.ready = false
           this.$http
-            .get(`${process.env.NODE_ENV === 'development' ? 'https://cors-anywhere.herokuapp.com/' : ''}https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
+            .get(`${process.env.NODE_ENV === 'production' && this.$env.IS_ELECTRON  ? '' : 'https://cors-anywhere.herokuapp.com/'}https://api.darksky.net/forecast/${this.apiKey}/${this.latitude},${this.longitude}?exclude=minutely,alerts,flags`)
             .then((response) => {
               this.ready = true
               if (response.status === 200) {
@@ -89,6 +89,8 @@
               this.ready = true
               this.weather = null
               this.message = `${e.message} - ${new Date().toString()}`
+              console.log(JSON.stringify(process.env))
+              console.dir(process.env)
             })
         }
       },

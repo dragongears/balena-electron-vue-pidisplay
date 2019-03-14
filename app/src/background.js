@@ -37,11 +37,11 @@ const winURL = process.env.NODE_ENV === 'development'
 const electronConfig = {
   URL_LAUNCHER_TOUCH: process.env.URL_LAUNCHER_TOUCH === '1' ? 1 : 0,
   URL_LAUNCHER_TOUCH_SIMULATE: process.env.URL_LAUNCHER_TOUCH_SIMULATE === '1' ? 1 : 0,
-  URL_LAUNCHER_FRAME: process.env.URL_LAUNCHER_FRAME === '1' ? 1 : 0,
+  URL_LAUNCHER_FRAME: 1, //process.env.URL_LAUNCHER_FRAME === '1' ? 1 : 0,
   URL_LAUNCHER_KIOSK: process.env.URL_LAUNCHER_KIOSK === '1' ? 1 : 0,
   URL_LAUNCHER_NODE: process.env.URL_LAUNCHER_NODE === '1' ? 1 : 0,
-  URL_LAUNCHER_WIDTH: parseInt(process.env.URL_LAUNCHER_WIDTH || 1920, 10),
-  URL_LAUNCHER_HEIGHT: parseInt(process.env.URL_LAUNCHER_HEIGHT || 1080, 10),
+  URL_LAUNCHER_WIDTH: parseInt(process.env.URL_LAUNCHER_WIDTH || 800, 10),
+  URL_LAUNCHER_HEIGHT: parseInt(process.env.URL_LAUNCHER_HEIGHT || 480, 10),
   URL_LAUNCHER_TITLE: process.env.URL_LAUNCHER_TITLE || 'BALENA.IO',
   URL_LAUNCHER_CONSOLE: process.env.URL_LAUNCHER_CONSOLE === '1' ? 1 : 0,
   URL_LAUNCHER_URL: process.env.URL_LAUNCHER_URL || winURL,
@@ -114,6 +114,7 @@ protocol.registerStandardSchemes(['app'], { secure: true })
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
+    resizable: false,
     width: electronConfig.URL_LAUNCHER_WIDTH,
     height: electronConfig.URL_LAUNCHER_HEIGHT,
     frame: !!electronConfig.URL_LAUNCHER_FRAME,

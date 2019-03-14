@@ -1,12 +1,13 @@
 {
-  "name": "balena-electron-vue",
+  "name": "balena-electron-vue-pidisplay",
   "version": "0.1.0",
-  "description": "Base Balena Electron Vue app",
+  "description": "Balena Electron Vue app",
   "author": "Art Dahm <art@dahm.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:web": "vue-cli-service build src/web.js",
     "lint": "vue-cli-service lint",
     "serve:electron": "vue-cli-service electron:serve",
     "build:electron": "vue-cli-service electron:build",
@@ -14,6 +15,7 @@
     "postuninstall": "electron-builder install-app-deps",
     "build:pi": "vue-cli-service electron:build --legacy --armv7l"
   },
+  "web": "web.js",
   "main": "background.js",
   "dependencies": {
     "lockfile": "^1.0.4",

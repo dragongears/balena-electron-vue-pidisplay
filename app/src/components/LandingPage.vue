@@ -13,7 +13,7 @@
       </weather>
       <div class="last-updated">
         <div v-if="lastUpdated">
-          Last updated: {{lastUpdated}}
+          Last updated: {{lastUpdated.toDateString('en-US', {weekday: 'long'})}} {{lastUpdated.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'})}}
         </div>
       </div>
     </section>
@@ -55,7 +55,7 @@
       },
       showUpdateDateTime () {
         this.$refs.igimage.getUserFeed()
-        this.lastUpdated = new Date().toString()
+        this.lastUpdated = new Date()
       }
     }
   }
@@ -78,6 +78,9 @@
     align-items: flex-start;
     height: 100vh;
     width: 100vw;
+    max-width: 800px;
+    max-height: 480px;
+    margin: auto;
 
     > section {
       height: 100%;
