@@ -1,14 +1,14 @@
 # balena-electron-vue-pidisplay
 
 > A Raspberry Pi project to display the time and weather next to the most recent image in an Instagram feed.
-> Based off of [resin-electron-vue](https://github.com/imomaliev/resin-electron-vue)
+> Based on [balena-electron-vuecli3](https://github.com/Lurow/balena-electron-vuecli3)
 
 #### Storing a DarkSky API Key and Instagram Token for Development and Production
 
 ##### Development
-Create a .env file in the root directory of your project.
-Add an environment variable containing your DarkSky API key on a new line in the form of DARKSKY=YOUR_API_KEY_HERE
-Add an environment variable containing your Instagram token on a new line in the form of INSTAGRAM=YOUR_TOKEN_HERE
+Create a .env.local file in the root directory of your project.
+Add an environment variable containing your DarkSky API key on a new line in the form of VUE_APP_DARKSKY=YOUR_API_KEY_HERE
+Add an environment variable containing your Instagram token on a new line in the form of VUE_APP_INSTAGRAM=YOUR_TOKEN_HERE
 
 ##### Production
 For a Balena (formerly Resin.io) device, create a DARKSKY device variable and an INSTAGRAM device variable in the dashboard.
