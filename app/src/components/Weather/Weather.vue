@@ -91,8 +91,6 @@
               this.ready = true
               this.weather = null
               this.message = `${e.message} - ${new Date().toString()}`
-              console.log(JSON.stringify(process.env))
-              console.dir(process.env)
             })
         }
       },
