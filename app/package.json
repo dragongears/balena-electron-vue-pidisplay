@@ -17,7 +17,9 @@
   "main": "background.js",
   "dependencies": {
     "lockfile": "^1.0.4",
-    "vue": "^2.6.6"
+    "vue": "^2.6.6",
+    "axios": "^0.16.1",
+    "vue-instagram": "^2.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
