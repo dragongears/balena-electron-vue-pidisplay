@@ -11,7 +11,7 @@ let env = {}
 if (process.env.NODE_ENV === 'production') {
   const { ipcRenderer } = require('electron')
 
-  env = ipcRenderer.sendSync('synchronous-message', 'synchronous-message from renderer process')
+  env = ipcRenderer.sendSync('request-env-vars')
 
 }
 
