@@ -45,7 +45,7 @@
     font-weight: bold;
 
     .time {
-      font-size: 62px;
+      font-size: 52px;
     }
 
     .date {
