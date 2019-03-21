@@ -2,7 +2,7 @@
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
        :width=width :height=height x="0px" y="0px" :fill=color
        viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-    <path :d=skycon />
+    <path :d=path />
   </svg>
 </template>
 
@@ -25,6 +25,7 @@ const conditions = {
 }
 
 export default {
+  name: 'weather-icon',
   props: {
     width: {
       type: [String, Number],
@@ -43,26 +44,10 @@ export default {
       default: '#000000'
     }
   },
-  data: function () {
-    return {
-      skycon: null
+  computed: {
+    path: function () {
+      return conditions[this.condition] || conditions.na
     }
-  },
-  methods: {
-    setCondition (value) {
-      this.skycon = conditions[value]
-      if (this.skycon === undefined) {
-        this.skycon = conditions.na
-      }
-    }
-  },
-  watch: {
-    condition (value) {
-      this.setCondition(value)
-    }
-  },
-  mounted () {
-    this.setCondition(this.condition)
   }
 }
 </script>

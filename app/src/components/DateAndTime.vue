@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: 'date-and-time',
     data () {
       return {
         date: new Date()
