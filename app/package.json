@@ -18,9 +18,9 @@
   "web": "web.js",
   "main": "background.js",
   "dependencies": {
+    "axios": "^0.16.1",
     "lockfile": "^1.0.4",
     "vue": "^2.6.6",
-    "axios": "^0.16.1",
     "vue-instagram": "^2.0.1"
   },
   "devDependencies": {
@@ -33,7 +33,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-cli-plugin-electron-builder": "^1.1.2",
+    "vue-cli-plugin-electron-builder": "^1.2.0",
     "vue-template-compiler": "^2.5.21"
   }
 }
