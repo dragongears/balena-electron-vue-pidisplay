@@ -18,7 +18,7 @@
   "web": "web.js",
   "main": "background.js",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "lockfile": "^1.0.4",
     "vue": "^2.6.6",
     "vue-instagram": "^2.0.1"
